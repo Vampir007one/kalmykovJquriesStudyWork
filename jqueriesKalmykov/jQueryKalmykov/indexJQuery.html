@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" value = "Начать движение" id="run">
+    <div class="control">
+        <div id="box" class="box">Блок</div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#run').click(function(){
+                $('#box').animate({opacity: 0, left: '400'}, 3000);
+                $('#box').animate({opacity: 100, left: '0'}, 3000);
+                $('#box').animate({width: 100, height: 40}, 3000);
+            });
+        });
+    </script>
+    
+</body>
+</html>

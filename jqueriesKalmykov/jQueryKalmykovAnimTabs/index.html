@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQueryAnimTabs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <ul>
+            <li ><a class="active" href="" title="Projects">Новости<span>+28</span></a></li>
+            <li ><a class="inactive" href="" title="Contacts">Контакты</a></li>
+            <li ><a class="inactive" href="" title="Earning">О сайте</a></li>
+            <li ><a class="inactive" href="" title="To-do">Соглашение</a></li>
+        </ul>
+    </div>
+    <div id="slider">
+        <h2>Заголовок</h2>
+        <p>Описание</p>
+        <h2>Заголовок</h2>
+        <p>Описание</p>
+        <h2>Заголовок</h2>
+        <p>Описание</p>
+        <h2>Заголовок</h2>
+        <p>Описание</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('li').click(function(){
+                var number = $(this).index();
+                $('h2').hide().eq(number).show();
+                $('p').hide().eq(number).show();
+                $(this).toggleClass('active inactive');
+                $('li').not(this).removeClass('active').addClass('inactive');
+            });
+
+            $('h2').not(':first').hide();
+            $('p').not(':first').hide();
+        });
+    </script>
+</body>
+</html>

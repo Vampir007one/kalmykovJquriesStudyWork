@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuaryCountSimbols</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="height: 25px;">
+        <div id="barbox"></div>
+        <div id="count">50</div>
+    </div>
+    <pre><textarea name="" id="contentbox" cols="30" rows="10"></textarea></pre>
+    <script>
+        $(document).ready(function()
+        {
+            $('#contentbox').keyup(function()
+            {
+                var box = $(this).val();
+                var main = box.length*100;
+                var value = (main/50);
+                var count = 50 - box.length;
+
+                if (box.length) 
+                {
+                    $('#count').html(count);
+                    $('#bar').animate(
+                        {
+                            "width": value+'%',
+                        },1)   ; 
+                }
+                else
+                {
+                    alert('Места больше нет!');
+                }
+                return false;
+                
+            });
+        });
+    </script>
+</body>
+</html>
